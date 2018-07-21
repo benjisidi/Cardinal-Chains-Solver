@@ -13,6 +13,7 @@ class Graph:
 	def twoWay(self, x, y):
 		return ((y in self.nodes[x]) and (x in self.nodes[y]))
 
+	# Create a graph given a 2d matrix
 	def from_matrix(self, matrix):
 		self.matrix = matrix
 		for rowI, row in enumerate(matrix):
@@ -38,6 +39,8 @@ class Graph:
 							if matrix[rowI + i][colI + j] >= val:
 								self.nodes[(rowI, colI)].append((rowI + i, colI + j))
 
+	# Creates a Tk window and draws the matrix and graph representations
+	# ToDo: Add an update function so that the window does not have to be destroyed to display changes in the graph
 	def draw(self, width=1280, height=720):
 		# Window width and height, and matrix box side length in pixels
 		box = 100
@@ -118,8 +121,8 @@ class Graph:
 			vertices = self.nodes[node]
 			# No exits at all
 			if (vertices == [] or (
-					# Just one two-way node that therefore must be entrance
-					len(vertices) == 1 and self.twoWay(node, vertices[0])) and self.nodes.values().count(node) == 1):
+			# Just one two-way node that therefore must be entrance
+			len(vertices) == 1 and self.twoWay(node, vertices[0])) and self.nodes.values().count(node) == 1):
 				endPoints.append(node)
 		self.endPoints = endPoints
 		return endPoints
@@ -208,6 +211,7 @@ class Graph:
 		# Select only the solutions that visit every node
 		self.solutions = [x for x in self.paths if len(x) == len(self.nodes.keys())]
 
+	# Continuously call check_vertices until the graph stops being modified
 	def simplify(self):
 		prev_complexity = len(self.nodes.values())
 		self.check_vertices()
@@ -221,40 +225,3 @@ class Graph:
 		self.from_matrix(self.matrix)
 		self.paths = []
 		self.solutions = []
-
-	def matrix_from_image(self, im):
-		# im should be numpy bitmap
-		pass
-
-
-'''
-  a--b--c
- /
-s
- \
-  d--e--f
-
-
-want: [(s), (s, a), (s, a, b), (s, a, b, c), (s, d), (s, d, e), (s, d, e, f)]
-Start with empty master list
-for each destination:
-    add list containing path to that destination to master list
-
-
-    # Brute force method:
-    # Use depth-first-search with backtracking.
-    # We need to keep track of vertices to do this, so we'll represent them as
-    # [source, destination] pairs
-    def brute_force(self):
-        self.discovered = []
-        for startPoint in self.startPoints:
-            self.dfs([startPoint, self.nodes[startPoint][0]])
-
-
-    def dfs(self, vertex):
-        self.discovered.append(vertex)
-        vertices = [[vertex[1], x] for x in self.nodes[vertex[1]]]
-        for v in vertices:
-            if v not in self.discovered:
-                self.dfs(v)
-'''
