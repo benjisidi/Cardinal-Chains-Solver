@@ -13,6 +13,14 @@ A long-form write-up of the development of this project is available on my blog,
 - Open *Cardinal Chains* and navigate to the level you wish to solve (Currently solves 1-20 excluding 10)
 - Run *ChainsOCR.py*
 
+#### Dependencies
+
+- [NumPy](http://www.numpy.org/)
+- [PyAutoGUI](https://pyautogui.readthedocs.io/en/latest/)
+- [win32GUI](https://pypi.org/project/win32gui/)
+- [mss](https://pypi.org/project/mss/)
+- [OpenCV](https://pypi.org/project/opencv-python/)
+
 ## File Structure
 
 | File/Folder              | Contents                                                     |
