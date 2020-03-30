@@ -2,9 +2,7 @@
 
 This is an ongoing project to develop and implement an algorithm to computationally solve the puzzle game [*Cardinal Chains*](https://danijmn.itch.io/cardinalchains), made by Daniel Nora.
 
-The game essentially boils down to solving the Hamiltonian Path problem, with some additional simplifying and complicating features.
-
-A long-form write-up of the development of this project is available on my blog, [here](http://insomniaccoder.com/2018/05/10/computationally-solving-cardinal-chains-an-adventure-with-graphs/).
+The game essentially boils down to solving the Hamiltonian Path problem, with some additional simplifying features.
 
 ## Usage
 
