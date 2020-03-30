@@ -26,7 +26,7 @@ The game essentially boils down to solving the Hamiltonian Path problem, with so
 | Graph.py                 | Holds the Graph object, which stores the graph representation of each level, along with methods to construct the graph from a 2d matrix, display it in a Tk window, and simplify and solve it. |
 | ChainsOCR.py             | Holds the ChainsOCR object, which contains methods to "read" each level from the game window and move the mouse once a solution has been computed by *Graph*. |
 | graph_tester.py          | Simple script for testing the Graph object's *draw* function. |
-| performance_benchmark.py | Script comparing solving a level by attempting some logical simplifications of the graph, and simply brute-forcing it. Results are shown in the aforementioned blog post. |
+| performance_benchmark.py | Script comparing solving a level by attempting some logical simplifications of the graph, and simply brute-forcing it. |
 
 
 
