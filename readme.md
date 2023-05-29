@@ -28,7 +28,6 @@ The game essentially boils down to solving the Hamiltonian Path problem, with so
 | graph_tester.py          | Simple script for testing the Graph object's *draw* function. |
 | performance_benchmark.py | Script comparing solving a level by attempting some logical simplifications of the graph, and simply brute-forcing it. |
 
-I am debugging pull requests and need a change to merge.
 
 
 ## Future Improvements
